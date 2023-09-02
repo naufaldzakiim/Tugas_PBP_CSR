@@ -1,0 +1,108 @@
+<html id="top" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/home.css">
+
+        <title>kitabMasak.in</title>
+    </head>
+
+    <body>
+        <header id="nav-bar" class="jumbotron sticky glass-card">
+            <div class="logo">
+                <h1>kitabMasak.in</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#top-menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div id="content" class="glass-card">
+                <article id="home">
+                    <div>
+                        <h1>kitabMasak.in</h1>
+                    </div>
+                    <figure>
+                        <img src="assets/images/home.png" alt="Recipe Book">
+                    </figure>
+                    <div>
+                        <p>Your all in one page of the best<br> international cuisine book recipe</p>
+
+                        <div id="top-menu"></div>
+                    </div>
+                </article>
+                
+                <article id="menu">
+                    <div id="menu-header">
+                        <h1>Menu</h1>
+                    </div>
+                    <div class="food-search-bar">
+                        <input type="text" class="search-input" placeholder="Search a food" id="search-input">
+                        <button type="submit" class="btn search-btn" id="search-btn">
+                            <img src="assets/images/magnifying-glass.png" alt="search icon">
+                        </button>
+                    </div>
+                    <div class="food-result">
+                        <div id="food">
+                            <!-- <div class="food-item neumorp-card">
+                                <div class="food-image">
+                                    <img src="assets/images/Cassoulet.jpg" alt="food">
+                                </div>
+                                <div class="food-name">
+                                    <h3>Cassaoulet</h3>
+                                    <a class="recipe-btn" id="recipe-btn">Get Recipe</a>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </article>
+                
+                <article id="about">
+                    <div>
+                        <h1>About</h1>
+                    </div>
+                    <div>
+                        <p>kitabMasak.in is a website that provides recipes from various countries in the world.</p>
+                        <p>All menu recipes in this page is fetched from <a href="https://www.themealdb.com/api.php">TheMealDB</a>.</p>
+                        <p>This website is made as a project submission for Platform Based Programming Class.</p>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- diletakkan di luar id food biar bisa sticky di tengah viewport -->
+        <div class="food-details">
+            <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+                <img src="assets/images/close.png" alt="close icon">
+            </button>
+
+            <div class="food-details-content">
+                <!-- <h2 class="recipe-title">Foods Name</h2>
+                <div class="recipe-food-img">
+                    <img src="assets/images/Cassoulet.jpg" alt="food">
+                </div>
+                <p class="recipe-category">Category Name</p>
+                <div class="recipe-instruction">
+                    <h3>Instruction:</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita ab explicabo temporibus tempora accusantium, corporis libero veniam quidem, nisi velit vero assumenda deserunt quos voluptatum natus cupiditate iusto? At.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta beatae vero incidunt. A, voluptates veniam praesentium optio itaque, dolorem dolores maiores fugiat harum deleniti iusto delectus ab, temporibus odit perferendis!</p>
+                </div>
+                <div class="recipe-link">
+                    <a href="#" target="_blank">Watch Video</a>
+                </div> -->
+            </div>
+        </div>
+
+        <footer id="credits" class="footer">
+            <p>crafted with &hearts; by Naufal Dzaki Imtiyaz</p>
+        </footer>
+
+        <script src="assets/script.js"></script>
+    </body>
+</html>
