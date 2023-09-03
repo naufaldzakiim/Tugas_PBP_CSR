@@ -1,12 +1,12 @@
 const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("search-input");
 const foodList = document.getElementById("food");
 const foodDetailsContent = document.querySelector(".food-details-content");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
 
 async function getFoodList() {
-  let searchInput = document.getElementById("search-input").value.trim();
   const response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput.value}`
   );
   const data = await response.json();
   let html = "";
@@ -60,7 +60,7 @@ async function foodListInit() {
 }
 
 function foodRecipeModal(food) {
-  console.log(food);
+  //   console.log(food);
   food = food[0];
   let html = `
         <h2 class="recipe-title">${food.strMeal}</h2>
@@ -100,3 +100,11 @@ recipeCloseBtn.addEventListener("click", () => {
 });
 
 foodListInit();
+
+searchInput.addEventListener("input", () => {
+  if (searchInput.value == "") {
+    foodListInit();
+  } else {
+    getFoodList();
+  }
+});
