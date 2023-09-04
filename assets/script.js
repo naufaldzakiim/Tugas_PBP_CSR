@@ -3,6 +3,20 @@ const foodList = document.getElementById("food");
 const foodDetailsContent = document.getElementById("food-details-content");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
 
+foodListInit();
+
+searchInput.addEventListener("input", () => {
+  if (searchInput.value == "") {
+    foodListInit();
+  } else {
+    getFoodList();
+  }
+});
+
+recipeCloseBtn.addEventListener("click", () => {
+  foodDetailsContent.parentElement.classList.remove("show-recipe");
+});
+
 async function getFoodList() {
   const response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput.value}`
@@ -81,23 +95,9 @@ function foodRecipeModal(food) {
 }
 
 async function getFoodRecipe(id) {
-    const response = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-    );
-    const data = await response.json();
-    foodRecipeModal(data.meals);
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+  );
+  const data = await response.json();
+  foodRecipeModal(data.meals);
 }
-
-recipeCloseBtn.addEventListener("click", () => {
-  foodDetailsContent.parentElement.classList.remove("show-recipe");
-});
-
-foodListInit();
-
-searchInput.addEventListener("input", () => {
-  if (searchInput.value == "") {
-    foodListInit();
-  } else {
-    getFoodList();
-  }
-});
