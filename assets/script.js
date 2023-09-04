@@ -13,15 +13,15 @@ async function getFoodList() {
   if (data.meals) {
     data.meals.forEach((meal) => {
       html += `
-                    <div class="food-item neumorp-card" data-id="${meal.idMeal}">
-                        <div class="food-image">
-                            <img src="${meal.strMealThumb}" alt="food">
-                        </div>
-                        <div class="food-name">
-                            <h3>${meal.strMeal}</h3>
-                            <a class="recipe-btn" id="recipe-btn">Get Recipe</a>
-                        </div>
-                    </div>
+        <div class="food-item neumorp-card" data-id="${meal.idMeal}">
+          <div class="food-image">
+            <img src="${meal.strMealThumb}" alt="food">
+          </div>
+          <div class="food-name">
+            <h3>${meal.strMeal}</h3>
+            <a class="recipe-btn" id="recipe-btn">Get Recipe</a>
+          </div>
+        </div>
                 `;
     });
     foodList.classList.remove("not-found");
@@ -43,15 +43,15 @@ async function foodListInit() {
     if (data.meals) {
       data.meals.forEach((meal) => {
         html += `
-                    <div class="food-item neumorp-card" data-id="${meal.idMeal}">
-                        <div class="food-image">
-                            <img src="${meal.strMealThumb}" alt="food">
-                        </div>
-                        <div class="food-name">
-                            <h3>${meal.strMeal}</h3>
-                            <a class="recipe-btn" id="recipe-btn">Get Recipe</a>
-                        </div>
-                    </div>
+          <div class="food-item neumorp-card" data-id="${meal.idMeal}">
+            <div class="food-image">
+              <img src="${meal.strMealThumb}" alt="food">
+            </div>
+            <div class="food-name">
+              <h3>${meal.strMeal}</h3>
+              <a class="recipe-btn" id="recipe-btn">Get Recipe</a>
+            </div>
+          </div>
                 `;
       });
     }
@@ -63,18 +63,18 @@ function foodRecipeModal(food) {
   //   console.log(food);
   food = food[0];
   let html = `
-        <h2 class="recipe-title">${food.strMeal}</h2>
-        <div class="recipe-food-img">
-            <img src="${food.strMealThumb}" alt="food">
-        </div>
-        <p class="recipe-category">${food.strCategory}</p>
-        <div class="recipe-instruction">
-            <h3>Instruction:</h3>
-            <p>${food.strInstructions}</p>
-        </div>
-        <div class="recipe-link">
-            <a href="${food.strYoutube}" target="_blank">Watch Video</a>
-        </div>
+    <h2 class="recipe-title">${food.strMeal}</h2>
+    <div class="recipe-food-img">
+      <img src="${food.strMealThumb}" alt="food">
+    </div>
+    <p class="recipe-category">${food.strCategory}</p>
+    <div class="recipe-instruction">
+      <h3>Instruction:</h3>
+      <p>${food.strInstructions}</p>
+    </div>
+    <div class="recipe-link">
+      <a href="${food.strYoutube}" target="_blank">Watch Video</a>
+    </div>
     `;
 
   foodDetailsContent.innerHTML = html;

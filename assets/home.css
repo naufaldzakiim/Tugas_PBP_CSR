@@ -23,8 +23,7 @@ html {
 body {
     font-family: 'Nunito', sans-serif;
     color: #fff;
-    overflow: auto;
-    overflow-x: hidden;
+    margin: 0px auto;
 }
 
 .glass-card {
@@ -37,7 +36,7 @@ body {
 }
 
 .neumorp-card {
-    background: #b296c250;
+    background: #d9b6ec23;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -101,7 +100,8 @@ nav a:hover::before {
 }
 
 .jumbotron {
-    margin: 10px 30px;
+    margin: 10px auto;
+    max-width: 1560px;
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -117,7 +117,8 @@ nav a:hover::before {
 }
 
 main {
-    margin: 10px 30px;
+    margin: 10px auto;
+    max-width: 1560px;
     display: flex;
 }
 
@@ -332,6 +333,20 @@ main {
     text-align: center;
 }
 
+html::-webkit-scrollbar {
+    width: 10px;
+    background: #827486;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #f2eef3;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
 .food-details::-webkit-scrollbar {
     width: 10px;
 }
@@ -401,6 +416,8 @@ main {
 
 .recipe-instruction {
     padding: 1rem 0;
+    margin: 0px auto;
+    width: 75%;
 }
 
 .recipe-food-img {
