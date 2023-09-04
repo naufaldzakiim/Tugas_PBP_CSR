@@ -1,7 +1,6 @@
-const searchBtn = document.getElementById("search-btn");
 const searchInput = document.getElementById("search-input");
 const foodList = document.getElementById("food");
-const foodDetailsContent = document.querySelector(".food-details-content");
+const foodDetailsContent = document.getElementById("food-details-content");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
 
 async function getFoodList() {
@@ -13,13 +12,13 @@ async function getFoodList() {
   if (data.meals) {
     data.meals.forEach((meal) => {
       html += `
-        <div class="food-item neumorp-card" data-id="${meal.idMeal}">
+        <div class="food-item neumorp-card">
           <div class="food-image">
             <img src="${meal.strMealThumb}" alt="food">
           </div>
           <div class="food-name">
             <h3>${meal.strMeal}</h3>
-            <a class="recipe-btn" id="recipe-btn">Get Recipe</a>
+            <button class="recipe-btn" onClick="getFoodRecipe(${meal.idMeal})">Get Recipe</button>
           </div>
         </div>
                 `;
@@ -49,7 +48,7 @@ async function foodListInit() {
             </div>
             <div class="food-name">
               <h3>${meal.strMeal}</h3>
-              <a class="recipe-btn" id="recipe-btn">Get Recipe</a>
+              <button class="recipe-btn" onClick="getFoodRecipe(${meal.idMeal})">Get Recipe</button>
             </div>
           </div>
                 `;
@@ -81,20 +80,14 @@ function foodRecipeModal(food) {
   foodDetailsContent.parentElement.classList.add("show-recipe");
 }
 
-async function getFoodRecipe(e) {
-  e.preventDefault();
-  if (e.target.classList.contains("recipe-btn")) {
-    let foodItem = e.target.parentElement.parentElement;
+async function getFoodRecipe(id) {
     const response = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodItem.dataset.id}`
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
     );
     const data = await response.json();
     foodRecipeModal(data.meals);
-  }
 }
 
-searchBtn.addEventListener("click", getFoodList);
-foodList.addEventListener("click", getFoodRecipe);
 recipeCloseBtn.addEventListener("click", () => {
   foodDetailsContent.parentElement.classList.remove("show-recipe");
 });
